@@ -115,11 +115,10 @@ class DialClient(BaseClient):
         # 3. If choices exist and not empty:
         #    - Get delta from choices[0]["delta"]
         #    - Return content from delta.get("content", '') - use empty string as default
+        if choices:
+            delta = choices[0]['delta']
+            return delta.get("content", '')
+        
         # 4. If no choices, return empty string
-        if not choices:
-            return ''
-        
-        delta = choices[0]['delta']
-        
-        return delta.get("content", '')
-                
+        return ''
+             
