@@ -9,8 +9,8 @@ from task.models.role import Role
 
 
 async def start(stream: bool) -> None:
-    client = DialClient(deployment_name="gpt-5-2025-08-07")
-    # client = CustomDialClient(deployment_name="gpt-5-2025-08-07")
+    client = DialClient(deployment_name="gpt-5-mini-2025-08-07")
+    # client = CustomDialClient(deployment_name="gpt-5-mini-2025-08-07")
 
     conversation = Conversation()
 
@@ -44,5 +44,5 @@ async def start(stream: bool) -> None:
 
 
 asyncio.run(
-    start(True)
+    start(False)
 )
